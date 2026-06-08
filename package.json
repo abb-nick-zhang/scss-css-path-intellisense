@@ -83,5 +83,9 @@
     "@types/vscode": "^1.90.0",
     "@vscode/vsce": "^3.9.2",
     "typescript": "^5.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abb-nick-zhang/scss-css-path-intellisense.git"
   }
 }
