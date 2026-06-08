@@ -1,0 +1,5 @@
+**/*.ts
+**/.vscode/**
+.gitignore
+tsconfig.json
+README.md

@@ -1,0 +1,87 @@
+{
+  "name": "scss-css-path-intellisense",
+  "displayName": "SCSS/CSS Path IntelliSense",
+  "description": "Go to definition, document links, and alias-based path auto-completion for SCSS/CSS import paths.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:scss",
+    "onLanguage:css"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "SCSS/CSS Path IntelliSense",
+      "properties": {
+        "scssPathJump.enableNodeModules": {
+          "type": "boolean",
+          "default": true,
+          "description": "Resolve bare package paths from node_modules when possible."
+        },
+        "scssPathJump.enableUrl": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable path resolution for url(...) references."
+        },
+        "scssPathJump.enableDocumentLinks": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable clickable links for import path strings."
+        },
+        "scssPathJump.enablePathCompletion": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable path auto-completion in SCSS/CSS import-like syntax."
+        },
+        "scssPathJump.preferExtensionless": {
+          "type": "boolean",
+          "default": true,
+          "description": "Prefer extensionless insertion text for style file completion items."
+        },
+        "scssPathJump.showPartialFiles": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show Sass partial files (for example, _button.scss) in completion candidates."
+        },
+        "scssPathJump.completionMaxEntries": {
+          "type": "number",
+          "default": 200,
+          "minimum": 20,
+          "description": "Maximum number of path completion candidates returned per request."
+        },
+        "scssPathJump.logLevel": {
+          "type": "string",
+          "enum": [
+            "off",
+            "error",
+            "debug"
+          ],
+          "default": "error",
+          "description": "Controls extension logging verbosity."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "tsc -p ./ --noEmit",
+    "vscode:prepublish": "npm run compile"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.5",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3.9.2",
+    "typescript": "^5.9.3"
+  }
+}
